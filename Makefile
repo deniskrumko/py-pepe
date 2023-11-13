@@ -5,9 +5,9 @@ PYPY = 'https://pypi.org'
 TEST_PYPY = 'https://test.pypi.org'
 
 lint:
-	isort $(BASE_DIR)
-	flake8 $(BASE_DIR)
-	mypy $(BASE_DIR)
+	isort .
+	flake8 .
+	mypy .
 
 test:
 	PYTHONPATH=. pytest --cov --cov-report=term-missing
