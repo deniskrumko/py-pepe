@@ -9,6 +9,9 @@ lint:
 	flake8 $(BASE_DIR)
 	mypy $(BASE_DIR)
 
+test:
+	PYTHONPATH=. pytest --cov --cov-report=term-missing
+
 install:
 	python3 -m pip install --user --upgrade twine
 
