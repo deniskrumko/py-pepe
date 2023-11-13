@@ -16,5 +16,5 @@ runs:
     - name: dependencies
       # Build can be skipped with new option: https://github.com/pypa/pip/issues/11440
       # Or via some magic: https://github.com/pypa/pip/issues/8049#issuecomment-633845028
-      run: pip install -e .[dev] && pip uninstall -y pepe
+      run: pip install -e .[dev] && pip uninstall -y py-pepe
       shell: bash

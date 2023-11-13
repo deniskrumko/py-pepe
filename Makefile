@@ -1,5 +1,5 @@
 BASE_DIR = 'pepe'
-PACKAGE_NAME = 'pepe'
+PACKAGE_NAME = 'py-pepe'
 
 PYPY = 'https://pypi.org'
 TEST_PYPY = 'https://test.pypi.org'

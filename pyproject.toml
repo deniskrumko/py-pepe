@@ -1,5 +1,5 @@
 [project]
-name = "pepe"
+name = "py-pepe"
 dynamic = ["version"]
 description = "use python scripts in unix pipes"
 readme = "README.md"
