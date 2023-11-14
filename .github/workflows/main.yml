@@ -7,7 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, '3.10', '3.11']
+        python-version: [3.8, 3.9, '3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup python with dev dependencies
+        uses: ./.github/actions/testsonly
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: PYTHONPATH=. pytest --cov --cov-report=term-missing
+
+  linters:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10']
     steps:
       - uses: actions/checkout@v3
       - name: Setup python with dev dependencies
@@ -16,7 +29,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: flake8 .
       - run: mypy .
-      - run: PYTHONPATH=. pytest --cov --cov-report=term-missing
 
   release:
     needs:
